@@ -1,5 +1,7 @@
 <?php //Copyright (c) babaiyun.com[cxly_21@163.com] All rights reserved.
 
+$_SERVER['BBY_DEBUG'] =1;
+
 !isset($_SERVER['BBY_DEBUG']) && $_SERVER['BBY_DEBUG'] =0;
 
 function_exists('ini_set') && ini_set('display_errors', $_SERVER['BBY_DEBUG'] ? '1' : '0');
@@ -426,7 +428,7 @@ function bby_http_post($url, $data){
     curl_close($ch);
     return $result;
 }
-
+//BBY template view from Composer
 
 function cp_skin_errbox($s){
 	echo '<p class="msgbox msgbox-error">'. $s .'</p>';
@@ -560,8 +562,6 @@ function cp_skin_footer(){
 </body></html>
 <?php
 }
-
-
 //bby_minipass_data_start
 
 $mpdata_str ="";
@@ -689,8 +689,6 @@ function mpdata_logout(){
 	if( isset($_SESSION['user']) ) unset($_SESSION['user']);
 	if( isset($_SESSION['pass']) ) unset($_SESSION['pass']);
 }
-
-
 bby_env_set('site_name', 'Minipass');
 
 bby_hook_add('tpl_page_top', 'mp_page_topnav');
@@ -1038,6 +1036,7 @@ function mp_page_foot(){
 <p class="license">Minipass released under the <a href="https://github.com/babaiyun/minipass/blob/master/LICENSE">MIT license</a>.</p>
 <?php
 }
+
 
 $act_func ='mp_view_'. $mp_act;
 $act_notlogin =array('home'=>1, 'login'=>1);
