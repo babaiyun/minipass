@@ -596,9 +596,16 @@ function mpdata_decode_init(){
 	
 	$pass =sessdata_get('pass');
 	$mpdata =bby_json_decode( bby_decrypt($mpdata_str, $pass), 1);
+}
+
+function minipass_check_sess(){
+	global $mpdata, $islogin;
+	if( !$islogin ){
+		return;
+	}
 	
 	if( !isset($mpdata['pass']) || $mpdata['pass']!=$pass || $mpdata['user']!=sessdata_get('user') ){
-		exit();
+		mpdata_logout();
 	}
 }
 
@@ -679,6 +686,7 @@ empty($mp_act) && $mp_act ='home';
 $islogin =_SESSION('islogin')=='TRUE'?1:0;
 
 mpdata_decode_init();
+minipass_check_sess();
 
 //注销登录
 function mpdata_logout(){
