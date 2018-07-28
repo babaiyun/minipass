@@ -604,7 +604,7 @@ function minipass_check_sess(){
 		return;
 	}
 	
-	if( !isset($mpdata['pass']) || $mpdata['pass']!=$pass || $mpdata['user']!=sessdata_get('user') ){
+	if( !isset($mpdata['pass']) || $mpdata['pass']!=sessdata_get('pass') || $mpdata['user']!=sessdata_get('user') ){
 		mpdata_logout();
 	}
 }
