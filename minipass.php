@@ -1045,6 +1045,11 @@ function mp_page_foot(){
 <?php
 }
 
+function mp_view_logout(){
+	mpdata_logout();
+	bby_location('?act=login');
+}
+
 
 $act_func ='mp_view_'. $mp_act;
 $act_notlogin =array('home'=>1, 'login'=>1);
