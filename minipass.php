@@ -504,7 +504,7 @@ pre.installer {
 .ul-list li{font-size:20px; color:#bbb;}
 .ul-list li:hover{ background-color:#F8F8F8; }
 .ht-item{padding:5px;}
-.ht-tit{color:#333; font-size:20px; font-weight:normal; margin:10px 0;}
+.ht-tit{color:#333; font-size:18px; font-weight:normal; margin:3px 0;}
 
 .prev-next { text-align: center; margin-top: 40px;}
 .prev-next a{ margin-left:10px; margin-right:10px;}
